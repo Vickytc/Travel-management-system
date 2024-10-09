@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.travel.admin.mapper.HotelMapper">
+
+    <resultMap id="BaseResultMap" type="com.travel.admin.model.domain.Hotel">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="businessRegistrationNumber" column="business_registration_number" jdbcType="VARCHAR"/>
+            <result property="contactPhoneNumber" column="contact_phone_number" jdbcType="VARCHAR"/>
+            <result property="contactEmail" column="contact_email" jdbcType="VARCHAR"/>
+            <result property="contactUsername" column="contact_username" jdbcType="VARCHAR"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="description" column="description" jdbcType="VARCHAR"/>
+            <result property="hotelAddress" column="hotel_address" jdbcType="VARCHAR"/>
+            <result property="hotelName" column="hotel_name" jdbcType="VARCHAR"/>
+            <result property="image" column="image" jdbcType="VARCHAR"/>
+            <result property="starRating" column="star_rating" jdbcType="INTEGER"/>
+            <result property="state" column="state" jdbcType="INTEGER"/>
+            <result property="url" column="url" jdbcType="VARCHAR"/>
+            <result property="userId" column="user_id" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,business_registration_number,contact_email,
+        contact_phone_number,contact_username,create_time,
+        description,hotel_address,hotel_name,
+        image,star_rating,state,
+        url,user_id
+    </sql>
+</mapper>

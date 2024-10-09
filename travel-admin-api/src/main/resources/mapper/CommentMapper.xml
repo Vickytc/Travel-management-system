@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.travel.admin.mapper.CommentMapper">
+
+    <resultMap id="BaseResultMap" type="com.travel.admin.model.domain.Comment">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="content" column="content" jdbcType="VARCHAR"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="email" column="email" jdbcType="VARCHAR"/>
+            <result property="hotelId" column="hotel_id" jdbcType="INTEGER"/>
+            <result property="image" column="image" jdbcType="VARCHAR"/>
+            <result property="roomId" column="room_id" jdbcType="INTEGER"/>
+            <result property="serviceRating" column="service_rating" jdbcType="INTEGER"/>
+            <result property="userId" column="user_id" jdbcType="INTEGER"/>
+            <result property="username" column="username" jdbcType="VARCHAR"/>
+            <result property="state" column="state" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,content,create_time,
+        email,hotel_id,image,
+        room_id,service_rating,user_id,
+        username,state
+    </sql>
+</mapper>

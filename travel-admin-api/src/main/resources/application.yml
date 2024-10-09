@@ -1,0 +1,69 @@
+server:
+  port: 9999
+travel-admin-api:
+  upload:
+    path: D:/aLucia/24S2/SPM SWEN90016/Assignment2/Travel Management System/uploadfile # The real address of the picture upload
+  login:
+    error-count: 5 # Maximum number of login errors for a user
+    lock-time: 60 # The maximum number of login errors is locked (in seconds).
+  recaptcha:
+    site-key: 6Lda3VoqAAAAAO3Z6ktTFMK5-Q7m1OFJkNsKTQ2l
+    secret-key: 6Lda3VoqAAAAANPPaIcJ1tbv3wIRnMnYlNP21-xT
+spring:
+  mvc:
+    static-path-pattern: /image/**
+  web:
+    resources:
+      static-locations: file:${travel-admin-api.upload.path}
+  datasource:
+    url: jdbc:mysql://localhost:3306/travel-admin?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true&characterEncoding=utf-8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+  redis:
+    port: 6379
+    host: 127.0.0.1
+    password:
+    lettuce:
+      pool:
+        max-active: 10
+        max-idle: 10
+        min-idle: 0
+        max-wait: 100
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  # Configure QQ mail to send information
+#  mail:
+#    host: smtp.qq.com # Email server address
+#    username:  1229837368@qq.com # Sender's email
+#    password:  # Authorization Code
+#    properties:
+#      mail:
+#        smtp:
+#          auth: true
+#          starttls:
+#            enable: true
+  mail:
+    protocol: smtps
+    host: smtp.163.com
+    port: 465
+    username: luxibai@163.com
+    password: KUWIOHGRQQROQKIA
+    default-encoding: utf-8
+    properties:
+      mail:
+        debug: true
+logging:
+  level:
+    cn.edu.hbpu: debug
+  pattern:
+    dateformat: yyyy-MM-dd HH:mm:ss
+mybatis-plus:
+  configuration:
+    cache-enabled: false  #Disable L2 cache
+  global-config:
+    db-config:
+      id-type: auto  #@TableId
+
+
